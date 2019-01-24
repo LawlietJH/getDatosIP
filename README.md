@@ -1,6 +1,15 @@
 # getDatosIP
+## Version de Script: v1.0.1
+### Dependencias:
 
-## Python
+__Requiere instalar _requests_ y _beautifulsoup4_:__
+
+    python -m pip install requests beautifulsoup4
+
+### Descripción:
+
+__Obtiene todos los datos de una IP en especifico, si no se le pasan parametros al algoritmo, mostrará los datos de la IP del usuario.__
+
 ## Resultados de Ejemplo:
   
     > python getDatosIP.py 104.248.74.241
