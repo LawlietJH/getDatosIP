@@ -57,6 +57,9 @@ def getIPData(IP=''):
 		data['ip'] = unicode(datos).split('value="')[1].split('"')[0]
 		
 		return data
+		
+		# Esta funcion devuelve un diccionario con los siguientes datos:
+		# codigo, pais, region, ciudad, latitud, longitud, src, isp.
 
 
 if len(sys.argv) == 2:
@@ -72,9 +75,11 @@ if len(sys.argv) == 2:
 				sys.exit()
 		
 		data = getIPData(IP)
-
-		print('\n\n')
-		for x in data: print(x + ': ' + data[x])
+		
+		print('')
+		for x in data:
+			y = x.capitalize() if not x in ['ip', 'isp', 'src'] else x.upper()
+			print(' ' + y + ': ' + data[x])
 	
 	else: print('\n\n\t IP No Valida.\n')
 
@@ -82,8 +87,10 @@ elif len(sys.argv) == 1:
 	
 	data = getIPData()
 	
-	print('\n\n')
-	for x in data: print(x + ': ' + data[x])
+	print('')
+	for x in data:
+		y = x.capitalize() if not x in ['ip', 'isp', 'src'] else x.upper()
+		print(' ' + y + ': ' + data[x])
 	
 else:
 	
